@@ -1,0 +1,23 @@
+#background {
+	background-color: #000;
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+#inputContainer {
+  color: #fff;
+}
+
+#inputContainer input {
+  border-style: none none solid none;
+  background: none;
+}
+
+#inputContainer label {
+  margin-bottom: 0;
+  margin-top: 5px;
+}

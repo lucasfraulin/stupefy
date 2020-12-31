@@ -1,0 +1,145 @@
+html, body{
+  padding: 0;
+  margin: 0;
+  height:100%;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-fluid{
+  margin: 0;
+  padding: 0;
+}
+
+#nowPlayingContainerBar{
+  width: 100%;
+  background-color: #282828;
+  bottom: 0;
+  position: fixed;
+}
+
+#nowPlayingBar{
+  width: 100%;
+  height: 90px;
+  padding:16px;
+}
+#nowPlayingCenter .content {
+  width: 100%;
+  height: 60px;
+  text-align:center;
+}
+
+.control-button{
+  background-color: transparent;
+  border:none;
+  vertical-align: middle;
+}
+
+.control-button img{
+  height:20px;
+  width:20px;
+}
+
+.control-button.play img, .control-button.pause img{
+  height:32px;
+  width:32px;
+}
+
+.control-button:hover{
+  cursor: pointer;
+}
+.playbackBar{
+  display: flex;
+  margin-top:10px;
+}
+.progressTime{
+  color: #fff;
+  font-size: 11px;
+  cursor:pointer;
+}
+.current{
+  padding-right: 10px;
+}
+.remaining{
+  padding-left: 10px;
+}
+.progressBar{
+  height:12px;
+  display: inline-flex;
+  width:100%;
+}
+
+.playbackBar .progressBar{
+    margin-top:3px;
+}
+
+.progressBarBg{
+  width:100%;
+  height: 4px;
+  background-color: #404040;
+  border-radius:2px;
+}
+
+.myprogress{
+  background-color: #a0a0a0;
+  width:0;
+  height:4px;
+  border-radius:2px;
+}
+
+.album-footer-img{
+  height: 100%;
+  width:100%;
+  background-size:cover;
+  max-width:60px;
+  margin-right: 12px;
+  float:left;
+}
+
+#nowPlayingLeft .trackInfo{
+  color: #eeba30;
+}
+
+#nowPlayingLeft .trackInfo .trackName{
+}
+
+#nowPlayingLeft .trackInfo .artistName{
+  font-size: 14px;
+  color: #BD9521;
+}
+
+#nowPlayingRight{
+  margin-top: 15px;
+}
+
+.volumeBar{
+  min-width: 100px;
+  position:absolute;
+  right: 0;
+}
+
+.volumeBar .progressBar{
+  width: 125px;
+}
+
+#topContainer{
+  min-height: 100vh;
+  width:100%;
+}
+
+#navbarContainer{
+  background-color: #000;
+  width: 220px;
+  position: fixed;
+  top:0;
+  left:0;
+}
+
+.navBar{
+  padding:25px;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+}

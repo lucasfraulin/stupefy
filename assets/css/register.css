@@ -1,6 +1,11 @@
-#background {
+/* font-family: 'Cinzel Decorative', cursive;
+font-family: 'Eagle Lake', cursive;
+font-family: 'Montserrat', sans-serif; */
+
+body{
 	background-color: #000;
   background-image: url(../images/bg.jpg);
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   display: table;
@@ -9,15 +14,100 @@
 }
 
 #inputContainer {
-  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  margin:0;
 }
 
 #inputContainer input {
   border-style: none none solid none;
   background: none;
+  border-bottom: solid 1px #f4d582;
+  font-size: 16px;
+  color: #eeba30;
+
+}
+#inputContainer button{
+  border-color: #740001;
+  background: none;
+  color: #eeba30;
+  border-radius: 25px;
+  border: 2px solid;
+  text-align: center;
+  /* font-family: 'Eagle Lake', cursive; */
+}
+
+#inputContainer button:hover, button:active{
+  background-color: #BD9521;
+  border-color: #BD9521;
+  color:#680000;
 }
 
 #inputContainer label {
   margin-bottom: 0;
   margin-top: 5px;
+
+}
+
+.container{
+  position: relative;
+}
+
+.register-title{
+  font-size: 7rem;
+  font-weight: 500;
+  color: 	#740001;
+  font-family: 'Cinzel Decorative', cursive;
+
+}
+.smaller-register-title{
+  font-size: 3rem;
+  font-weight: normal;
+}
+.login-form, .register-form{
+  width:90%;
+  max-width: 700px;
+  border-left: 1px solid #BD9521;
+  padding: 5%;
+}
+
+.form-title{
+  margin-bottom:15px;
+  color:#eeba30;
+  text-align: center;
+  font-weight: 500;
+  /* font-family: 'Eagle Lake', cursive; */
+}
+
+.hasAccountText{
+    padding:10px;
+    font-size: 18px;
+    text-align: center;
+    color:#fff;
+}
+
+.hasAccountText:hover{
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+::placeholder{
+  color: red;
+  opacity: 1;
+}
+
+.errorMessage{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+@media (min-width: 576px) {
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
 }

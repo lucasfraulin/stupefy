@@ -1,7 +1,7 @@
 <div id="nowPlayingContainerBar" class="container-fluid">
   <div id="nowPlayingBar" class="row ">
 
-    <div id="nowPlayingLeft" class="col-4">
+    <div id="nowPlayingLeft" class="col">
 
       <div class="content">
         <span class="albumLink">
@@ -21,7 +21,7 @@
 
     </div>
 
-    <div id="nowPlayingCenter" class="col-4">
+    <div id="nowPlayingCenter" class="col-5">
 
       <div class="content player-controls">
 
@@ -62,7 +62,7 @@
 
     </div>
 
-    <div id="nowPlayingRight" class="col-4">
+    <div id="nowPlayingRight" class="col">
       <div class="volumeBar">
 
         <button class="control-button volume">

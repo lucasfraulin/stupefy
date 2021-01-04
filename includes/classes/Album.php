@@ -44,8 +44,18 @@
     }
 
     public function getGenre(){
-      $genre = $this->dbh->query("SELECT name FROM genres WHERE id='$this->id'")->fetch();
+      $genre = $this->dbh->query("SELECT name FROM genres WHERE id='$this->genreId'")->fetch();
       return $genre['name'];
+    }
+
+    public function getNumberOfSongs(){
+      $numofsongs = $this->dbh->query("SELECT COUNT(*) FROM songs WHERE album='$this->id'");
+      return $numofsongs->fetchColumn();
+    }
+
+    public function getSongIds(){
+      $songs = $this->dbh->query("SELECT id FROM songs WHERE album='$this->id' ORDER BY albumOrder ASC")->fetchAll();
+      return $songs;
     }
 
   }

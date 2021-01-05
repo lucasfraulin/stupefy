@@ -13,7 +13,44 @@ $jsonArray = json_encode($resultArray);
 
 <script type="text/javascript">
 
-  console.log(<?php echo $jsonArray; ?>);
+  $(document).ready(function(){
+
+    currentPlaylist = <?php echo $jsonArray; ?>;
+    audioElement = new Audio();
+    setTrack(currentPlaylist[0], currentPlaylist, false);
+
+  });
+
+  function setTrack(trackId, newPlaylist, play){
+
+    //ajax call with callback function
+    $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data){
+
+      var track = JSON.parse(data);
+
+      console.log(track);
+      audioElement.setTrack(track.path);
+
+    });
+
+    if (play == true){
+      audioElement.play();
+    }
+
+  };
+
+
+  function playSong(){
+    audioElement.play();
+    $(".control-button.play").hide();
+    $(".control-button.pause").show();
+  };
+
+  function pauseSong(){
+    audioElement.pause();
+    $(".control-button.pause").hide();
+    $(".control-button.play").show();
+  };
 
 </script>
 
@@ -53,10 +90,10 @@ $jsonArray = json_encode($resultArray);
           <button class="control-button previous" title="previous button">
             <img src="assets/images/icons/previous.png" alt="previous">
           </button>
-          <button class="control-button play" title="play button">
+          <button class="control-button play" title="play button" onclick="playSong()">
             <img src="assets/images/icons/play.png" alt="play">
           </button>
-          <button class="control-button pause" title="pause button" style="display:none;">
+          <button class="control-button pause" title="pause button" onclick="pauseSong()" style="display:none;">
             <img src="assets/images/icons/pause.png" alt="pause">
           </button>
           <button class="control-button next" title="next button">

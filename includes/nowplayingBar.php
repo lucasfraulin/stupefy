@@ -1,3 +1,24 @@
+<?php
+
+$songQuery = $dbh->query("SELECT id FROM songs ORDER BY RAND() LIMIT 10")->fetchAll();
+
+$resultArray = array();
+foreach ($songQuery as $song) {
+  array_push($resultArray, $song['id']);
+}
+
+$jsonArray = json_encode($resultArray);
+
+?>
+
+<script type="text/javascript">
+
+  console.log(<?php echo $jsonArray; ?>);
+
+</script>
+
+
+
 <div id="nowPlayingContainerBar" class="container-fluid">
   <div id="nowPlayingBar" class="row ">
 

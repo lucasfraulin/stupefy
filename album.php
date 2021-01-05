@@ -10,8 +10,6 @@
 
   $artist = $album->getArtist();
 
-
-
 ?>
 
 

@@ -46,14 +46,6 @@
 </head>
 <body>
 
-  <!-- <script type="text/javascript">
-
-    // var audioElement = new Audio();
-    // audioElement.setTrack("assets/music/bensound-goinghigher.mp3");
-    // audioElement.audio.play();
-
-  </script> -->
-
   <div id="mainContainer">
 
     <!--top container -->

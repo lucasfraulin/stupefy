@@ -1,6 +1,10 @@
 var currentPlaylist = [];
+var shufflePlaylist = [];
 var audioElement;
 var mouseDown = false;
+var currentIndex = 0;
+var repeat = false;
+var shuffle = false;
 
 //formatter
 function formatTime(seconds){
@@ -30,6 +34,10 @@ function Audio(){
 
   this.currentlyPlaying; //currently playing song
   this.audio = document.createElement('audio'); //audio object
+
+  this.audio.addEventListener("ended", function(){
+    nextSong();
+  })
 
   this.audio.addEventListener("canplay", function(){
     //this is refering to the audio object since it was called on the audio object

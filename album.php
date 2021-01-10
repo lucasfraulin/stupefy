@@ -33,18 +33,18 @@
       $trackcounter = 1;
       foreach ($songIds as $songId) {
 
-        $albumSong = new Song($dbh, $songId['id']);
+        $albumSong = new Song($dbh, $songId);
 
         echo "<li class='trackListRow'>
 
                 <div class='trackCount'>
-                  <img class='play' src='assets/images/icons/play-white.png'>
+                  <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
                   <span class='trackNumber'>". $trackcounter ."</span>
                 </div>
 
                 <div class='trackInfo'>
                   <span class='trackName'>".$albumSong->getTitle()."</span>
-                  <span class='trackArtist'>".$artist->getName()."</span>
+                  <span class='trackArtist'>".$albumSong->getArtist()."</span>
                 </div>
 
                 <div class='trackOptions'>
@@ -60,6 +60,13 @@
         $trackcounter++;
       }
      ?>
+
+     <script>
+			var tempSongIds = '<?php echo json_encode($songIds); ?>';
+			tempPlaylist = JSON.parse(tempSongIds);
+      console.log(tempPlaylist);
+		</script>
+
 
   </ul>
 

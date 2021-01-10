@@ -109,7 +109,7 @@ $jsonArray = json_encode($resultArray);
       return;
     }
 
-    if (currentIndex === currentPlaylist.length - 1){
+    if (currentIndex == currentPlaylist.length - 1){
       currentIndex = 0;
     } else {
       currentIndex++;
@@ -199,7 +199,7 @@ $jsonArray = json_encode($resultArray);
 
       //ajax call to get artist object
       $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(artistdata){
-
+        console.log(artistdata);
         var artist = JSON.parse(artistdata);
         $(".artistName span").text(artist.name);
 

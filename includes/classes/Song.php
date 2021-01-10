@@ -27,6 +27,10 @@
       $this->path = $this->songQueryData['path'];
     }
 
+    public function getId(){
+      return $this->id;
+    }
+
     public function getTitle(){
       return $this->title;
     }

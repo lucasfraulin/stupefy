@@ -55,7 +55,13 @@
 
     public function getSongIds(){
       $songs = $this->dbh->query("SELECT id FROM songs WHERE album='$this->id' ORDER BY albumOrder ASC")->fetchAll();
-      return $songs;
+      $songarray = array();
+      foreach ($songs as $song) {
+        array_push($songarray, $song['id']);
+      }
+
+      return $songarray;
+
     }
 
   }
